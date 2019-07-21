@@ -1,7 +1,7 @@
 public class Fraction {
 
-    public int numerator;
-    public int denominator;
+    private int numerator;
+    private int denominator;
 
             /* --- Constructors --- */
 
@@ -31,27 +31,71 @@ public class Fraction {
     }
 
             /* --- Methods --- */
-/*
-    public int getNumerator() {}
 
-    public int getDenominator() {}
+    public int getNumerator() {
+        return this.numerator;
+    }
 
-    public String toString() {}
+    public int getDenominator() {
+        return this.denominator;
+    }
 
-    public double toDouble() {}
+    public String toString() {
+        return this.numerator == 0 ? "0" : this.numerator == this.denominator ? "1" : this.numerator + "/" + this.denominator;
+    }
 
-    public Fraction add(Fraction other) {}
+    public double toDouble() {
+        return (double) this.numerator / (double) this.denominator;
+    }
 
-    public Fraction substract(Fraction other) {}
+    public Fraction add(Fraction other) {
+        int num = this.numerator * other.denominator + this.denominator * other.numerator;
+        int den = this.denominator * other.denominator;
 
-    public Fraction multiply(Fraction other) {}
+        Fraction result = new Fraction(num, den);
+        result.toLowestTerms();
 
-    public Fraction divide(Fraction other) {}
-*/
+        return result;
+    }
+
+    public Fraction substract(Fraction other) {
+        int num = this.numerator * other.denominator - this.denominator * other.numerator;
+        int den = this.denominator * other.denominator;
+
+        if (this.equals(other)) {
+            return new Fraction(0);
+        }
+
+        Fraction result = new Fraction(num, den);
+        result.toLowestTerms();
+
+        return result;
+    }
+
+    public Fraction multiply(Fraction other) {
+        int num = this.numerator * other.numerator;
+        int den = this.denominator * other.denominator;
+
+        Fraction result = new Fraction(num, den);
+        result.toLowestTerms();
+
+        return result;
+    }
+
+    public Fraction divide(Fraction other) {
+        int num = this.numerator * other.denominator;
+        int den = this.denominator * other.numerator;
+
+        Fraction result = new Fraction(num, den);
+        result.toLowestTerms();
+
+        return result;
+    }
+
     @Override
     public boolean equals(Object other) {
         if (other instanceof Fraction) {
-            if((double)((Fraction) other).numerator/(double)((Fraction) other).denominator != (double)this.numerator/(double)this.denominator){
+            if(((Fraction) other).toDouble() != this.toDouble()){
                 return false;
             }else {
                 return true;
