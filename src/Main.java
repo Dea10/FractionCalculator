@@ -1,7 +1,9 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        Fraction myFrac = new Fraction(105, 147);
+/*        Fraction myFrac = new Fraction(105, 147);
         Fraction otherFrac = new Fraction(5, 7);
 
         System.out.println(myFrac.toString());
@@ -12,6 +14,13 @@ public class Main {
         myFrac.toLowestTerms();
 
         System.out.println(myFrac.toString());
-        System.out.println(myFrac.divide(otherFrac).toString());
+        System.out.println(myFrac.divide(otherFrac).toString());*/
+
+        
+    }
+
+                /* --- Methods --- */
+    public String getOperation(Scanner input) {
+        System.out.println();
     }
 }
