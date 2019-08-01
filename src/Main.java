@@ -28,6 +28,13 @@ public class Main {
             case "/":
                 fractionResult = fraction1.divide(fraction2);
                 break;
+            case "=":
+                if (fraction1.equals(fraction2)) {
+                    System.out.println(fraction1.toString() + " = " + fraction2.toString());
+                }else {
+                    System.out.println(fraction1.toString() + " != " + fraction2.toString());
+                }
+                break;
         }
 
         System.out.println(fractionResult.toString());
@@ -41,7 +48,7 @@ public class Main {
         do {
             System.out.print("Please enter an operation (+, -, /, *, =, or Q to quit): ");
             userInputOperation = input.nextLine();
-            if (userInputOperation.contentEquals("+") || userInputOperation.contentEquals("-") || userInputOperation.contentEquals("/") || userInputOperation.contentEquals("*") || userInputOperation.toUpperCase().contentEquals("Q")) {
+            if (userInputOperation.contentEquals("+") || userInputOperation.contentEquals("-") || userInputOperation.contentEquals("/") || userInputOperation.contentEquals("*") || userInputOperation.contentEquals("=") || userInputOperation.toUpperCase().contentEquals("Q")) {
                 validUserInputOperation = true;
             }else {
                 validUserInputOperation = false;
