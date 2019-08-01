@@ -3,7 +3,7 @@ public class Fraction {
     private int numerator;
     private int denominator;
 
-            /* --- Constructors --- */
+                                            /* --- Constructors --- */
 
     public Fraction(int numerator, int denominator) throws IllegalArgumentException {
         try {
@@ -30,7 +30,7 @@ public class Fraction {
         this(0);
     }
 
-            /* --- Methods --- */
+                                            /* --- Methods --- */
 
     public int getNumerator() {
         return this.numerator;
