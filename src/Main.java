@@ -34,7 +34,7 @@ public class Main {
     }
 
                 /* --- Methods --- */
-    public static String getOperation(Scanner input) {
+    private static String getOperation(Scanner input) {
         String userInputOperation;
         boolean validUserInputOperation = true;
 
