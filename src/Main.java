@@ -6,12 +6,31 @@ public class Main {
     public static void main(String[] args) {
         String operation;
         Fraction fraction1;
+        Fraction fraction2;
+        Fraction fractionResult = new Fraction();
 
         welcome();
 
         operation = getOperation(new Scanner(System.in));
         fraction1 = getFraction(new Scanner(System.in));
-        System.out.println(fraction1.toString());
+        fraction2 = getFraction(new Scanner(System.in));
+
+        switch (operation) {
+            case "+":
+                fractionResult = fraction1.add(fraction2);
+                break;
+            case "-":
+                fractionResult = fraction1.substract(fraction2);
+                break;
+            case "*":
+                fractionResult = fraction1.multiply(fraction2);
+                break;
+            case "/":
+                fractionResult = fraction1.divide(fraction2);
+                break;
+        }
+
+        System.out.println(fractionResult.toString());
     }
 
                 /* --- Methods --- */
